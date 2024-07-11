@@ -14,7 +14,7 @@ const WrapperContainer = styled.div`
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
-const StyledPhotoContainer = styled.div<{ color: string }>`
+const StyledPhotoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ const StyledPhotoContainer = styled.div<{ color: string }>`
   padding-top: 10px;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  background-color: ${({ color }) => color};
+  background-color: ${COLORS.brown};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   min-width: inherit;
@@ -46,30 +46,25 @@ const StyledPhotoDescription = styled.div`
   font-size: large;
 `;
 
-interface ExperienceElementProps {
+interface AchievementElementProps {
   logo: any;
   time: string;
   name: string;
-  position: string;
   description: string;
-  color: string;
 }
 
-export const ExperienceElement = ({
+export const AchievementElement = ({
   logo,
   time,
   name,
-  position,
   description,
-  color,
-}: ExperienceElementProps) => {
+}: AchievementElementProps) => {
   return (
     <WrapperContainer>
-      <StyledPhotoContainer color={color}>
+      <StyledPhotoContainer>
         <StyledPhoto src={logo} alt="" />
         <StyledPhotoDescription>{time}</StyledPhotoDescription>
       </StyledPhotoContainer>
-      <LargeTextContainer>{position}</LargeTextContainer>
       <LargeTextContainer style={{ fontWeight: "800" }}>
         {name}
       </LargeTextContainer>

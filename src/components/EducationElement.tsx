@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../consts/colors";
-import agh from "../assets/images/agh.png";
 
 const StyledPhotoContainer = styled.div`
   display: flex;
@@ -36,7 +35,9 @@ const DescriptionContainer = styled.div`
 
 const LargeTextContainer = styled.div`
   color: ${COLORS.red};
-  font-size: larger;
+  font-size: x-large;
+  font-family: "caviar";
+  font-weight: bold;
 `;
 
 interface EducationElementProps {
@@ -45,6 +46,7 @@ interface EducationElementProps {
   university: string;
   specialization: string;
   description: string;
+  logo: any;
 }
 
 export const EducationElement = ({
@@ -53,6 +55,7 @@ export const EducationElement = ({
   university,
   specialization,
   description,
+  logo,
 }: EducationElementProps) => {
   return (
     <div
@@ -64,13 +67,19 @@ export const EducationElement = ({
       }}
     >
       <StyledPhotoContainer>
-        <StyledPhoto src={agh} alt="logo" />
+        <StyledPhoto src={logo} alt="logo" />
         <StyledPhotoDescription>{time}</StyledPhotoDescription>
       </StyledPhotoContainer>
       <DescriptionContainer>
         <LargeTextContainer>{name}</LargeTextContainer>
         <LargeTextContainer>{university}</LargeTextContainer>
-        <LargeTextContainer style={{ fontStyle: "italic", fontSize: "large" }}>
+        <LargeTextContainer
+          style={{
+            fontStyle: "italic",
+            fontSize: "large",
+            paddingBottom: "10px",
+          }}
+        >
           {specialization}
         </LargeTextContainer>
         <div>{description}</div>

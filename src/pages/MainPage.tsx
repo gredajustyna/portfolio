@@ -6,9 +6,9 @@ import { NavbarButton } from "../components/NavbarButton";
 import { AboutMePage } from "./AboutMePage";
 import { EducationPage } from "./EducationPage";
 import { ExperiencePage } from "./ExperiencePage";
-import { ProjectsPage } from "./ProjectsPage";
 import { SkillsPage } from "./SkillsPage";
 import { ContactPage } from "./ContactPage";
+import { PortfolioPage } from "./PortfolioPage";
 
 const ButtonContainer = styled.div`
   padding: 16px;
@@ -25,7 +25,7 @@ export const MainPage = (): ReactElement => {
   const skillsButtonRef = useRef<HTMLElement | null>(null);
   const educationButtonRef = useRef<HTMLElement | null>(null);
   const experienceButtonRef = useRef<HTMLElement | null>(null);
-  const projectsButtonRef = useRef<HTMLElement | null>(null);
+  const portfolioButtonRef = useRef<HTMLElement | null>(null);
   const contactButtonRef = useRef<HTMLElement | null>(null);
 
   const handleGenericScrollIntoView = (
@@ -59,8 +59,8 @@ export const MainPage = (): ReactElement => {
             onClick={() => handleGenericScrollIntoView(experienceButtonRef)}
           />
           <NavbarButton
-            text="Projects"
-            onClick={() => handleGenericScrollIntoView(projectsButtonRef)}
+            text="Portfolio"
+            onClick={() => handleGenericScrollIntoView(portfolioButtonRef)}
           />
           <NavbarButton
             text="Contact"
@@ -72,7 +72,7 @@ export const MainPage = (): ReactElement => {
       <SkillsPage ref={skillsButtonRef} />
       <EducationPage ref={educationButtonRef} />
       <ExperiencePage ref={experienceButtonRef} />
-      <ProjectsPage ref={projectsButtonRef} />
+      <PortfolioPage ref={portfolioButtonRef} />
       <ContactPage ref={contactButtonRef} />
     </>
   );
